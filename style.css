@@ -1,0 +1,59 @@
+body{
+    background-color: rgb(192, 130, 201);
+}
+
+
+
+
+.cabecalho{
+    background-color: #cd6dd6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+.container{ /*sobe o menu dentro do header e alinha verticalmente*/
+    display: flex;
+    align-items: center;
+}
+.container__botao { /*esconde o botãozinho do check*/
+    display: none;
+}
+/*cria o icone do menu hamburguer e coloca dentro do header*/
+.cabecalho__menu-hamburguer{     
+    width: 24px;
+     height: 24px;
+     background-image: url(img/menu.svg);
+     background-repeat: no-repeat;
+     background-position: center;
+     display: inline-block;
+ }
+ /* ajeita o icone do menu*/
+.container__imagem{
+    padding: 1em;
+}
+.container__titulo {
+    display: flex;/*REVER POR QUE FUI EU QUEM PUS*/
+    color: rgb(0, 0, 0);
+    padding-left: 1em;
+}
+.container__botao:checked~.container__rotulo>.cabecalho__menu-hamburguer {
+    /*esconde e mostra o menu*/
+    background-image: url("img/menuAberto.png");
+    }
+    
+    .container__botao:checked~.container__rotulo { /*o fundo do botao fica na cor escolhida*/
+    background: rgb(0, 0, 0);
+    }
+    /*OS ITENS DA LISTA / MODALIDADES */
+.container__botao:checked~.lista-menu {
+    display: block; /* mostra a lista bloqueada pq se nao por isso ela some */
+}
+.lista-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 25vw; /*largura do menu */
+    background-color:  rgb(255, 255, 255);
+    list-style-type: none;
+}
